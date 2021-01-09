@@ -10,4 +10,11 @@ source "$BIN_DIR/utils"
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 
+python -m spacy download en_core_web_sm \
+    && python -m spacy download en_core_web_md
+# Wordnet model for path generation
+python -m nltk.downloader wordnet
+python -m nltk.downloader stopwords
+python -m textblob.download_corpora
+
 pytest
